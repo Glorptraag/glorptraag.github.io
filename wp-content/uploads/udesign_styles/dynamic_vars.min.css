@@ -1,0 +1,175 @@
+@font-face {
+font-family:"Plus Jakarta Sans";
+src:url(//d-themes.com/wordpress/udesign/dummy/wp-content/uploads/sites/4/2023/04/PlusJakartaSans-Regular-3.ttf);font-weight:400;
+}
+html {
+--alpha-container-width: 1400px;
+--alpha-container-fluid-width: 1830px;
+--alpha-primary-color: #182b38;
+--alpha-secondary-color: #6d94af;
+--alpha-white-color: #fff;
+--alpha-dark-color: #182b38;
+--alpha-light-color: #ebe9e5;
+--alpha-accent-color: #6d94af;
+--alpha-success-color: #6d94af;
+--alpha-info-color: #6d94af;
+--alpha-alert-color: #F2A654;
+--alpha-danger-color: #F96868;
+--alpha-primary-color-hover: #28475c;
+--alpha-secondary-color-hover: #8eadc2;
+--alpha-dark-color-hover: #28475c;
+--alpha-light-color-hover: #ffffff;
+--alpha-accent-color-hover: #8eadc2;
+--alpha-success-color-hover: #8eadc2;
+--alpha-info-color-hover: #8eadc2;
+--alpha-alert-color-hover: #f6bf84;
+--alpha-danger-color-hover: #fb9a9a;
+--alpha-primary-color-light: #6197bc;
+--alpha-secondary-color-light: #f1f5f8;
+--alpha-dark-color-light: #6197bc;
+--alpha-light-color-light: #ffffff;
+--alpha-accent-color-light: #f1f5f8;
+--alpha-success-color-light: #f1f5f8;
+--alpha-info-color-light: #f1f5f8;
+--alpha-alert-color-light: #ffffff;
+--alpha-danger-color-light: #ffffff;
+--alpha-primary-gradient-1: #182a36;
+--alpha-primary-gradient-2: #28475c;
+--alpha-dark-body-color: #666;
+--alpha-grey-color: #999;
+--alpha-grey-color-light: #aaa;
+--alpha-traffic-white-color: #f9f9f9;
+--alpha-change-border-color: #e1e1e1;
+--alpha-change-border-color-light: #eee;
+--alpha-change-color-light-1: #fff;
+--alpha-change-color-light-2: #f4f4f4;
+--alpha-change-color-light-3: #ccc;
+--alpha-change-color-dark-1: #182b38;
+--alpha-change-color-dark-1-hover: #28475c;
+--alpha-site-bg-color: #ebe9e5;
+--alpha-site-width: false;
+--alpha-site-margin: 0;
+--alpha-site-gap: 0;
+--alpha-body-font-family: 'Montserrat';
+--alpha-body-font-weight: 400;
+--alpha-body-font-size: 16px;
+--alpha-body-line-height: 1.75;
+--alpha-body-letter-spacing: 0px;
+--alpha-body-color: #182b38;
+--alpha-h1-font-size: 70px;
+--alpha-h2-font-size: 36px;
+--alpha-h3-font-size: 35px;
+--alpha-h4-font-size: 20px;
+--alpha-h5-font-size: 16px;
+--alpha-h6-font-size: 16px;
+--alpha-heading-font-family: 'Lexend Deca';
+--alpha-heading-font-weight: 300;
+--alpha-heading-line-height: 1.2;
+--alpha-heading-letter-spacing: 0px;
+--alpha-heading-color: #182b38;
+--alpha-ptb-top-space: 46px;
+--alpha-ptb-bottom-space: 46px;
+--alpha-ptb-bg-color: #eee;
+}
+.page-wrapper {
+--alpha-page-wrapper-bg-color: #ebe9e5;
+}
+.page-header {
+}
+.page-header .page-title {
+--alpha-ptb-title-font-size: 28px;
+--alpha-ptb-title-text-transform: capitalize;
+--alpha-ptb-title-color: #333;
+}
+.page-header .page-subtitle {
+--alpha-ptb-subtitle-font-size: 18px;
+}
+.page-title-bar {
+--alpha-ptb-height: px;
+}
+.breadcrumb {
+--alpha-ptb-breadcrumb-font-size: 12px;
+--alpha-ptb-breadcrumb-color: #333;
+}
+.d-lazyload {
+--alpha-lazy-load-bg: #f4f4f4;
+}
+@media (max-width: 1399px) {
+    .container-fluid .container {
+        padding-left: 0;
+        padding-right: 0;
+}
+.elementor-column-gap-no > .elementor-column > .col-half-section,
+    .elementor-column-gap-no > .elementor-row > .elementor-column > .col-half-section {
+width: calc( 100% - var(--alpha-gap) * 4 );
+padding-left: calc( 2 * var(--alpha-gap) );
+}
+.elementor-column-gap-no > .elementor-column > .col-half-section-right,
+    .elementor-column-gap-no > .elementor-row > .elementor-column > .col-half-section-right {
+        padding-left: 0;
+padding-right: calc( 2 * var(--alpha-gap) );
+}
+.elementor-container > .elementor-column > .col-half-section,
+    .elementor-container > .elementor-row > .elementor-column > .col-half-section {
+width: calc(100% - var(--alpha-gap) * 2 + var(--alpha-el-section-gap));
+}
+}
+@media (max-width: 1829px) and (min-width: 480px) {
+.elementor-top-section.elementor-section-boxed > .elementor-container,
+.elementor-section-full_width .elementor-section-boxed > .elementor-container {
+width: calc(100% - var(--alpha-gap) * 4 + 2 * var(--alpha-el-section-gap));
+}
+
+.elementor-top-section.elementor-section-boxed > .slider-container.slider-shadow,
+.elementor-section-full_width .elementor-section-boxed > .slider-container.slider-shadow {
+width: calc(100% - var(--alpha-gap) * 4 + 40px) !important;
+}
+}
+@media (max-width: 1829px) and (min-width: 480px) {
+.side-header .elementor-top-section.elementor-section-boxed > .elementor-container,
+.side-header .elementor-section-full_width .elementor-section-boxed > .elementor-container {
+width: calc(100% - var(--alpha-gap) * 4 + 2 * var(--alpha-el-section-gap));
+}
+}
+@media (max-width: 1829px) and (min-width: 992px) {
+.side-on-desktop .elementor-top-section.elementor-section-boxed > .elementor-container,
+.side-on-desktop .elementor-section-full_width .elementor-section-boxed > .elementor-container {
+width: calc(100% - var(--alpha-gap) * 4 + 2 * var(--alpha-el-section-gap));
+}
+}
+@media (max-width: 1829px) and (min-width: 768px) {
+.side-on-tablet .elementor-top-section.elementor-section-boxed > .elementor-container,
+.side-on-tablet .elementor-section-full_width .elementor-section-boxed > .elementor-container {
+width: calc(100% - var(--alpha-gap) * 4 + 2 * var(--alpha-el-section-gap));
+}
+}
+@media (max-width: 1829px) and (min-width: 576px) {
+.side-on-mobile .elementor-top-section.elementor-section-boxed > .elementor-container,
+.side-on-mobile .elementor-section-full_width .elementor-section-boxed > .elementor-container {
+width: calc(100% - var(--alpha-gap) * 4 + 2 * var(--alpha-el-section-gap));
+}
+}
+@media (max-width: 1829px) and (min-width: 480px) {
+.elementor-top-section.elementor-section-boxed > .elementor-container.container-fluid {
+width: calc( 100% - var(--alpha-gap) * 4 + 2 * var(--alpha-el-section-gap));
+}
+}
+@media (max-width: 1519px) and (min-width: 992px) {
+.elementor-top-section.elementor-section-boxed > .elementor-container,
+.elementor-top-section.elementor-section-boxed > .elementor-container.container-fluid,
+.elementor-section-full_width .elementor-col-100 .elementor-section-boxed > .elementor-container {
+width: calc(86vw + var(--alpha-el-section-gap) * 2);
+}
+.container,
+.fixed .container {
+width: calc(86vw + 4 * var(--alpha-gap));
+}
+.elementor-container > .elementor-column > .col-half-section,
+.elementor-container > .elementor-row > .elementor-column > .col-half-section {
+max-width: calc((86vw + var(--alpha-el-section-gap) * 2) / 2);
+}
+.elementor-top-section.elementor-section-boxed > .slider-container.slider-shadow,
+.elementor-section-full_width .elementor-section-boxed > .slider-container.slider-shadow {
+width: calc(86vw + 40px) !important;
+}
+}

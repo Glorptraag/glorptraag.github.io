@@ -1,0 +1,178 @@
+/*
+Theme Name: UDesign Child
+Theme URI: https://d-themes.com/wordpress/udesign/envato-market/
+Author: Andon
+Author URI: https://1.envato.market/OdObz
+Description: A slick, powerful and clean theme UDesign provides an intuitive set of options to help you setup your WordPress site quickly and effectively. Flexibility is key and it has been optimized for SEO and speed. It is also responsive &amp; mobile ready should you choose that option. The UDesign theme features include: unlimited colors, widgetized home page, over 600 fonts to choose from, WooCommerce Integration, it is also translation and multilingual ready, step by step documentation, exclusive UDesign support forum and a helpful community. Always up-to-date security and many new features are constantly added as the theme evolves.
+Version: 1.0
+Template: u-design
+License: GNU General Public License v2 and ThemeForest license
+License URI: http://themeforest.net/licenses/regular_extended
+Tags: woocommerce, corporate, responsive, one-column, two-columns, three-columns, four-columns, full-width-template, left-sidebar, right-sidebar, custom-menu, custom-background, custom-colors, custom-header, custom-logo, featured-images, flexible-header, microformats, post-formats, rtl-language-support, theme-options, translation-ready, accessibility-ready
+
+*/
+
+/*************** ADD YOUR CUSTOM CSS HERE  ***************/
+
+
+.service-carousel-container {
+    position: relative;
+    padding: 0 0 60px;
+}
+.service-carousel {
+    margin: 0;
+}
+
+.service-carousel .slick-slide {
+    margin: 0 16px;
+}
+
+.service-carousel .slick-track {
+    display: flex !important;
+}
+
+.service-carousel .slick-slide {
+    height: inherit !important;
+}
+
+.service-card {
+    height: 100%;
+}
+
+.service-card {
+    padding: 32px;
+	background: #EBE9E5;
+	border-radius: 2px;
+	border: 1px solid #D3D3D3;
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+}
+.service-card .card-thumbnail {
+    position: relative;
+    height: 0;
+    padding-top: 69.01%;
+    background: #c3c3c3;
+	overflow: hidden;
+	margin-bottom: 32px;
+}
+.service-card  .card-thumbnail img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-position: center;
+    object-fit: cover;
+}
+.service-card .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+}
+.service-card .card-content > div {
+	display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.service-card .card-content > div * {
+	margin: 0;
+}
+.service-card .card-content h3 {
+    font-size: 30px;
+}
+.service-card .service-link {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    border-radius: 100px;
+    font-family: "Lexend Deca", Montserrat, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    background: #27276f;
+    border: 1px solid #27276f;
+    margin-right: auto !important;
+}
+.service-card .service-link:hover {
+	background: #27276f;
+}
+.service-card .service-link svg {
+	width: 16px;
+}
+.service-card .card-content p {
+    font-family: var(--e-global-typography-text-font-family), Sans-serif;
+    font-size: var(--e-global-typography-text-font-size);
+    font-weight: var(--e-global-typography-text-font-weight);
+    line-height: var(--e-global-typography-text-line-height);
+}
+.service-card .card-content span,
+.service-card .card-content span a {
+	color: #27276f;
+	font-size: 16px;
+}
+.service-card .card-content span a {
+	text-decoration: underline;
+}
+.service-carousel-nav {
+    display: flex;
+    justify-content: flex-start;
+    gap: 16px;
+    margin: 32px 16px;
+}
+.service-carousel-nav  button svg {
+    width: 30px;
+	fill: #27276f;
+	stroke: #27276f;
+}
+.service-carousel-nav button {
+	width: 68px;
+	height: 68px;
+	border-radius: 1000px;
+	border: 1px solid #27276f;
+	background: transparent;
+}
+.service-carousel-nav button.prev-arrow {
+	transform: rotate(180deg);
+}
+
+.service-carousel-nav button:hover {
+	background: #27276f;
+	border: 1px solid 27276f;
+}
+.service-carousel-nav button:hover svg {
+	fill: #fff;
+	stroke: #fff;
+}
+
+.blog-article-content h2, .blog-article-content h3 {
+    margin: 1em 0;
+}
+
+@media all and (max-width:900px){
+	.service-card .card-content span,
+	.service-card .card-content span a {
+		font-size: 14px;
+	}
+	.service-card .card-content p {
+		font-size: 16px;
+	}
+}
+
+
+
+@media all and (max-width:767px){
+	.site-logo img {
+		width: auto !important;
+		max-width: auto !important;
+	}
+}
+
+.menu-item-has-children>a:after {
+	right: 0 !important;
+}
