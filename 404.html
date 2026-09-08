@@ -1,13 +1,127 @@
 <!DOCTYPE html>
-<html lang="en-AU"><head><meta charset="utf-8">
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Page not found &ndash; Coastal Demolitions</title>
+<meta name="robots" content="noindex">
 <style>
- body{font-family:'Lexend Deca',Roboto,Arial,sans-serif;background:#101820;color:#fff;
+ :root{--ink:#101820;--gold:#f2a900}
+ body{font-family:'Lexend Deca',Roboto,Arial,sans-serif;background:var(--ink);color:#fff;
       display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;text-align:center}
- a{color:#f2a900;text-decoration:none;font-weight:600}
+ main{max-width:34rem;padding:1.5rem}
+ a{color:var(--gold);text-decoration:none;font-weight:600}
  h1{font-size:3rem;margin:0 0 .5rem}
-</style></head><body><div>
-<h1>404</h1><p>We can&rsquo;t find that page.</p>
-<p><a href="/">Back to Coastal Demolitions home</a> &middot; <a href="/contact-us/">Contact us</a></p>
-</div></body></html>
+ p{line-height:1.6;margin:.4rem 0}
+ .tel{display:inline-block;margin-top:1.4rem;font-size:1.15rem}
+ #rescue{display:none}
+</style>
+  <script src="/assets/coastal-attribution.js" defer></script>
+</head>
+<body>
+<main>
+  <h1>404</h1>
+  <p id="rescue">Looking for the right page&hellip;</p>
+  <p id="dead">We can&rsquo;t find that page.</p>
+  <p><a href="/">Back to Coastal Demolitions home</a> &middot;
+     <a href="/services/">Our services</a> &middot;
+     <a href="/contact-us/">Contact us</a></p>
+  <p class="tel"><a href="tel:0438277589">Call 0438 277 589</a></p>
+</main>
+
+<script>
+/* Rescue as many dead URLs as possible before showing a 404.
+ *
+ * GitHub Pages serves no 301s, so this is the only place casing variants, old
+ * WordPress permalink shapes (/2024/05/12/slug/) and near-miss slugs can be
+ * caught. Anything it cannot place is reported to GA4 as a real 404 so the
+ * misses are visible in week-one monitoring rather than silent.
+ */
+(function () {
+  var raw = location.pathname;
+  var qs = location.search + location.hash;
+
+  function go(to, how) {
+    try {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({event: 'not_found_rescued', nf_from: raw, nf_to: to, nf_how: how});
+    } catch (e) {}
+    location.replace(to + qs);
+  }
+
+  function slugOf(p) {
+    var parts = p.replace(/\/+$/, '').split('/');
+    return parts[parts.length - 1] || '';
+  }
+
+  function tokens(s) {
+    return s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim().split(/\s+/).filter(Boolean);
+  }
+
+  var req = decodeURIComponent(raw).toLowerCase();
+  // Normalise the shapes WordPress and old links throw at us.
+  req = req.replace(/\/(amp|feed)\/?$/, '/')      // AMP and feed suffixes
+           .replace(/\.(html?|php)$/, '/')        // /page.html, /page.php
+           .replace(/\/{2,}/g, '/');              // doubled slashes
+  if (!/\/$/.test(req)) req += '/';
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', '/url-index.json', true);
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState !== 4) return;
+
+    var list = [];
+    try { list = JSON.parse(xhr.responseText) || []; } catch (e) {}
+    if (!list.length) return dead();
+
+    var lower = {};
+    for (var i = 0; i < list.length; i++) lower[list[i].toLowerCase()] = list[i];
+
+    // 1. Exact match ignoring case — covers /Services/Demolition/, which the old
+    //    WordPress host served with a 200 and GitHub Pages will not.
+    if (lower[req] && lower[req] !== raw) return go(lower[req], 'case');
+
+    // 2. Same last slug somewhere else in the tree. Catches the dated permalink
+    //    shape /2024/05/12/post-slug/ and /blog/post-slug/ pointing at /post-slug/.
+    var want = slugOf(req);
+    if (want) {
+      for (var j = 0; j < list.length; j++) {
+        if (slugOf(list[j]).toLowerCase() === want) return go(list[j], 'slug');
+      }
+    }
+
+    // 3. Best token overlap, but only when the match is decisive. A wrong guess
+    //    is worse than an honest 404, so the bar is deliberately high.
+    var wt = tokens(want), best = null, bestScore = 0;
+    if (wt.length >= 2) {
+      for (var k = 0; k < list.length; k++) {
+        var ct = tokens(slugOf(list[k]));
+        if (!ct.length) continue;
+        var hit = 0;
+        for (var m = 0; m < wt.length; m++) if (ct.indexOf(wt[m]) !== -1) hit++;
+        var score = hit / Math.max(wt.length, ct.length);
+        if (score > bestScore) { bestScore = score; best = list[k]; }
+      }
+    }
+    if (best && bestScore >= 0.75) return go(best, 'fuzzy');
+
+    dead();
+  };
+
+  function dead() {
+    document.getElementById('rescue').style.display = 'none';
+    document.getElementById('dead').style.display = 'block';
+    try {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({event: 'not_found', nf_from: raw, nf_ref: document.referrer});
+    } catch (e) {}
+  }
+
+  // Show the "looking" line only while we are actually looking.
+  document.getElementById('rescue').style.display = 'block';
+  document.getElementById('dead').style.display = 'none';
+  xhr.send();
+})();
+</script>
+</body>
+</html>

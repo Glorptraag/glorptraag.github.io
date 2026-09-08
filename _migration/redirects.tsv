@@ -1,0 +1,41 @@
+# Coastal Demolitions — WordPress → static redirect map
+# Derived from live WordPress 301s (verified 8 Sep 2026). Single hop only: chains are flattened.
+# source	target	why
+/asbestos-removal/	/services/asbestos-removal/	WP 301
+/asbestos-removal/commercial/	/services/demolition/commercial/	WP 301
+/asbestos-removal/residential/	/services/asbestos-removal/residential/	WP 301 went to a .jpg; sent to the equivalent page instead
+/asbestos-removal/roof-removal/	/services/asbestos-removal/roof-removal/	WP 301
+/blog/asbestos-bathroom-removal-guide/	/asbestos-bathroom-removal-guide/	WP 301
+/commercial-demolitions-gold-coast/	/services/demolition/commercial/	WP 301 chain flattened (via /services/demolition/commercial-demolitions/)
+/contact/	/contact-us/	WP 301
+/contact.html	/contact-us/	capture artifact of /contact
+/demolition/	/services/demolition/	WP cross-canonical
+/demolition/commercial/	/services/demolition/commercial/	WP 301
+/demolition/residential/	/services/demolition/residential/	WP 301
+/earthworks/	/services/earthworks/	WP 301
+/earthworks/excavation-services/	/services/earthworks/excavation-services/	WP 301
+/earthworks/excavation-services/commercial/	/services/earthworks/excavation-services/commercial/	WP 301
+/earthworks/excavation-services/residential/	/services/earthworks/excavation-services/residential/	WP 301
+/gold-coast-demolitions/	/services/demolition/residential/	WP 301
+/residential-demolitions/	/services/demolition/residential/	WP 301
+/services/demolition/commercial-demolitions/	/services/demolition/commercial/	WP 301 (intermediate hop, stubbed so the old link still lands)
+/soil-remediation/	/services/soil-remediation/	WP 301
+/strip-outs/	/services/strip-outs/	WP 301
+/home/	/	WP 301
+/author/haydenembarkagency-com-au/	/blog/	author archive added on live after capture; thin, noindex on WP
+/2024/	/blog/	date archive, noindex on WP
+/2025/	/blog/	date archive, noindex on WP
+/2024/04/	/blog/	date archive, noindex on WP
+/2024/05/	/blog/	date archive, noindex on WP
+/2024/06/	/blog/	date archive, noindex on WP
+/2024/07/	/blog/	date archive, noindex on WP
+/2024/08/	/blog/	date archive, noindex on WP
+/2024/09/	/blog/	date archive, noindex on WP
+/2024/10/	/blog/	date archive, noindex on WP
+/2024/11/	/blog/	date archive, noindex on WP
+/2024/12/	/blog/	date archive, noindex on WP
+/2025/01/	/blog/	date archive, noindex on WP
+/2025/02/	/blog/	date archive, noindex on WP
+/2025/03/	/blog/	date archive, noindex on WP
+/2025/04/	/blog/	date archive, noindex on WP
+/2025/08/	/blog/	date archive, noindex on WP
